@@ -3,8 +3,8 @@ export client_name=
 export postal_code=
 
 apt update
-apt-get install p7zip-full
-apt install python3-pip
+apt install p7zip-full -y
+apt install python3-pip -y
 git clone https://github.com/clem9669/hashcat-rule.git
 git clone https://github.com/clem9669/wordlists.git
 git clone https://github.com/t3l3machus/psudohash.git
