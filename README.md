@@ -15,10 +15,10 @@ cd psudohash; yes | python3 psudohash.py -w $client_name --common-paddings-after
 pip install -r GeoWordlists/requirements.txt; GeoWordlists/GeoWordlists.py -p $postal_code -k 100 -o wordlists/geowordlist.txt
 cd wordlists; for f in *.7z; do 7z x "$f" && rm "$f"; done; cd ..
 curl https://raw.githubusercontent.com/tarraschk/richelieu/refs/heads/master/french_passwords_top20000.txt -O wordlists/richelieu.txt
-hashcat -m 1000 secretsdump.ntds -a3 '?a?a?a?a?a?a' -i --loopback
-hashcat -m 1000 secretsdump.ntds wordlists/psudohash.txt --loopback
-hashcat -m 1000 secretsdump.ntds wordlists/geowordlist.txt --loopback
-hashcat -m 1000 secretsdump.ntds wordlists/ -r OneRuleToRuleThemStill/OneRuleToRuleThemStill.rule --loopback
-hashcat -m 1000 secretsdump.ntds wordlists/ -r hashcat-rule/clem9669_medium.rule --loopback
+hashcat -m 1000 secretsdump.ntds_anon -a3 '?a?a?a?a?a?a' -i --loopback
+hashcat -m 1000 secretsdump.ntds_anon wordlists/psudohash.txt --loopback
+hashcat -m 1000 secretsdump.ntds_anon wordlists/geowordlist.txt --loopback
+hashcat -m 1000 secretsdump.ntds_anon wordlists/ -r OneRuleToRuleThemStill/OneRuleToRuleThemStill.rule --loopback
+hashcat -m 1000 secretsdump.ntds_anon wordlists/ -r hashcat-rule/clem9669_medium.rule --loopback
 ```
 
