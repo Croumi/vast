@@ -13,6 +13,7 @@ git clone https://github.com/stealthsploit/OneRuleToRuleThemStill.git
 git clone https://github.com/p0dalirius/GeoWordlists.git
 cd psudohash; yes | python3 psudohash.py -w $client_name --common-paddings-after -y 1990-2030 -o ../wordlists/psudohash.txt; cd ..
 pip install -r GeoWordlists/requirements.txt; GeoWordlists/GeoWordlists.py -p $postal_code -k 100 -o wordlists/geowordlist.txt
+curl https://hashmob.net/api/v2/downloads/research/official/hashmob.net_2025-02-02.found.7z -o wordlists/hashmob_full.7z
 cd wordlists; for f in *.7z; do 7z x "$f" && rm "$f"; done; cd ..
 curl https://raw.githubusercontent.com/tarraschk/richelieu/refs/heads/master/french_passwords_top20000.txt -O wordlists/richelieu.txt
 hashcat -m 1000 secretsdump.ntds_anon -a3 '?a?a?a?a?a?a?a' -i
