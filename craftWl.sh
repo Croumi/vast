@@ -1,6 +1,7 @@
 #!/bin/bash
 
-sudo apt install wget aria2 lbzip2 ripgrep python3 python3-pip -y
+sudo apt install wget aria2 lbzip2 ripgrep python3 python3-pip lzip -y
+pip install unidecode
 
 git clone --depth 1 https://github.com/clem9669/wordlists.git
 
@@ -88,9 +89,11 @@ cat *.dedupe > full_wl_cust.cated.txt
 rm *.dedupe
 duplicut full_wl_cust.cated.txt -o output_sns
 rm *.txt
-rm *.tmp
-
-
-
-
-
+mv output_sns ./processed
+cd processed/
+cat output_sns clem_hashmob_full > full_not_dedupe
+rm output_sns clem_hashmob_full
+duplicut full_not_dedupe -o full_dedupe
+rm full_not_dedupe
+lrzip -b full_dedupe -v
+rm full_dedupe
