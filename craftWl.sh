@@ -5,6 +5,7 @@ command_exists() {
     command -v "$1" >/dev/null 2>&1
 }
 
+sudo apt install libssl-dev pkg-config -y
 # Check if git is installed
 if ! command_exists git; then
     echo "Installing git..."
@@ -56,6 +57,7 @@ fi
 if ! command_exists cargo; then
     echo "Installing cargo rust"
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+    . "$HOME/.cargo/env"
 fi
 if ! command_exists cracken; then
     echo "Installing cargo cracken"
