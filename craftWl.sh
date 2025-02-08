@@ -5,7 +5,7 @@ command_exists() {
     command -v "$1" >/dev/null 2>&1
 }
 
-sudo apt install libssl-dev pkg-config -y
+sudo apt install libssl-dev pkg-config libxml2 -y
 # Check if git is installed
 if ! command_exists git; then
     echo "Installing git..."
