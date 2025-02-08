@@ -101,7 +101,7 @@ mv poc_cons phrases_fr_custom
 cat poc_vow >> phrases_fr_custom
 rm poc_vow
 sed -i "/l' /d" phrases_fr_custom
-mv phrases_fr_custom /root/serve/
+mv phrases_fr_custom /var/www/html/
 cd ../wordlists
 # Recup wikipedia (mots et titres)
 wget -O- https://dumps.wikimedia.your.org/frwiki/latest/frwiki-latest-pages-articles.xml.bz2 | LC_ALL=C lbunzip2 -dc -v | tee >(rg -o '\b[[:alnum:]]{4,}\b' | duplicut -o fr_wordlist_wki.wiki.tmp) | rg -o '(?<=title>)[^<]+' --pcre2 | duplicut -o fr_wki.title.tmp
@@ -204,7 +204,7 @@ rm clem_hashmob_full
 echo "Compressing..."
 lrzip -b full_dedupe -v
 rm full_dedupe full_wiki_content_fr_en_dedupe all_wiki_titles_full_dedupe
-mv full_dedupe.lrz /root/serve/
-mv output_sns /root/serve/
+mv full_dedupe.lrz /var/www/html/
+mv output_sns /var/www/html/
 cd ../../
 rm -rf wordlists/
