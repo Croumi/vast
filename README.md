@@ -24,3 +24,5 @@ hashcat -m 1000 secretsdump.ntds_anon wordlists/ -r OneRuleToRuleThemStill/OneRu
 hashcat -m 1000 secretsdump.ntds_anon wordlists/ -r hashcat-rule/clem9669_medium.rule --loopback
 ```
 
+todo : 
+- add https://github.com/p0dalirius/pyLDAPWordlistHarvester
