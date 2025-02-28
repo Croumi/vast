@@ -28,3 +28,4 @@ todo :
 - add https://github.com/p0dalirius/pyLDAPWordlistHarvester
 - update hashmob wordlist to set the correct day in the url
 - ajouter weakpass
+- ajouter rockyou
