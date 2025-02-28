@@ -27,3 +27,4 @@ hashcat -m 1000 secretsdump.ntds_anon wordlists/ -r hashcat-rule/clem9669_medium
 todo : 
 - add https://github.com/p0dalirius/pyLDAPWordlistHarvester
 - update hashmob wordlist to set the correct day in the url
+- ajouter weakpass
