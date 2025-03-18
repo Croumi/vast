@@ -18,11 +18,13 @@ wget https://hashmob.net/api/v2/downloads/research/official/hashmob.net_2025-02-
 cd wordlists; for f in *.7z; do 7z x "$f" && rm "$f"; done; cd ..
 curl https://raw.githubusercontent.com/tarraschk/richelieu/refs/heads/master/french_passwords_top20000.txt -O wordlists/richelieu.txt
 hashcat -m 1000 $ntds_filename -a3 '?a?a?a?a?a?a?a' -i
-hashcat -m 1000 $ntds_filename -1 '?u?l?d' -a3 '?1?1?1?1?1?1?1?1?a' -i
+hashcat -m 1000 $ntds_filename -1 '?u?l?d' -a3 '?1?1?1?1?1?1?1?a' -i
 hashcat -m 1000 $ntds_filenamen wordlists/psudohash.txt
 hashcat -m 1000 $ntds_filename wordlists/geowordlist.txt
 hashcat -m 1000 $ntds_filename wordlists/ -r OneRuleToRuleThemStill/OneRuleToRuleThemStill.rule --loopback
 hashcat -m 1000 $ntds_filename wordlists/ -r hashcat-rule/clem9669_medium.rule --loopback
+hashcat -m 1000 $ntds_filename -1 '?u?l?d' -a3 '?1?1?1?1?1?1?1?1?a' -i
+hashcat -m 1000 $ntds_filename -1 '?u?l?d' -a3 '?1?1?1?1?1?1?1?1?1?a' -i
 ```
 
 todo : 
