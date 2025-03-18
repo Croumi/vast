@@ -23,8 +23,8 @@ hashcat -m 1000 $ntds_filename wordlists/psudohash.txt
 hashcat -m 1000 $ntds_filename wordlists/geowordlist.txt
 hashcat -m 1000 $ntds_filename wordlists/ -r OneRuleToRuleThemStill/OneRuleToRuleThemStill.rule --loopback
 hashcat -m 1000 $ntds_filename wordlists/ -r hashcat-rule/clem9669_medium.rule --loopback
-hashcat -m 1000 $ntds_filename -1 '?u?l?d' -a3 '?1?1?1?1?1?1?1?1?a' -i -O
-hashcat -m 1000 $ntds_filename -1 '?u?l?d' -a3 '?1?1?1?1?1?1?1?1?1?a' -i -O
+hashcat -m 1000 $ntds_filename -1 '?u?l?d' -a3 '?1?1?1?1?1?1?1?1?a' -O
+hashcat -m 1000 $ntds_filename -1 '?u?l?d' -a3 '?1?1?1?1?1?1?1?1?1?a' -O
 ```
 
 todo : 
