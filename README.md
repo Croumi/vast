@@ -7,11 +7,11 @@ apt update
 apt install p7zip-full -y
 apt install python3-pip -y
 apt install vim -y
-git clone https://github.com/clem9669/hashcat-rule.git
+git clone https://github.com/clem9669/hashcat-rule.git --depth 1
 git clone https://github.com/clem9669/wordlists.git --depth 1
-git clone https://github.com/t3l3machus/psudohash.git
-git clone https://github.com/stealthsploit/OneRuleToRuleThemStill.git
-git clone https://github.com/p0dalirius/GeoWordlists.git
+git clone https://github.com/t3l3machus/psudohash.git --depth 1
+git clone https://github.com/stealthsploit/OneRuleToRuleThemStill.git --depth 1
+git clone https://github.com/p0dalirius/GeoWordlists.git --depth 1
 cd psudohash; yes | python3 psudohash.py -w $client_name --common-paddings-after -y 1990-2030 -o ../wordlists/psudohash.txt; cd ..
 pip install -r GeoWordlists/requirements.txt; GeoWordlists/GeoWordlists.py -p $postal_code -k 100 -o wordlists/geowordlist.txt
 wget https://hashmob.net/api/v2/downloads/research/official/hashmob.net_2025-02-02.found.7z -O wordlists/hashmob_full.7z
