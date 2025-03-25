@@ -25,7 +25,7 @@ git clone https://github.com/stealthsploit/OneRuleToRuleThemStill.git --depth 1
 
 #initial cracking
 hashcat -m 1000 $ntds_filename -a3 '?a?a?a?a?a?a?a' -i
-hashcat -m 1000 $ntds_filename -1 '?u?l?d' -a3 '?1?1?1?1?1?1?1?a' -i
+hashcat -m 1000 $ntds_filename -1 '?u?l?d' -a3 '?1?1?1?1?1?1?1?a' -O
 hashcat -m 1000 $ntds_filename wordlists/psudohash.txt
 hashcat -m 1000 $ntds_filename wordlists/geowordlist.txt
 hashcat -m 1000 $ntds_filename wordlists/ -r OneRuleToRuleThemStill/OneRuleToRuleThemStill.rule --loopback
